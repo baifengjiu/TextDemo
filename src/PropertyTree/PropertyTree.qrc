@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/PropertyTree">
+        <file>Resources/addItem.png</file>
+        <file>Resources/deleteItem.png</file>
+        <file>Resources/itemClose.png</file>
+        <file>Resources/itemExpansion.png</file>
+        <file>Resources/StyleSheet.css</file>
+    </qresource>
+</RCC>
