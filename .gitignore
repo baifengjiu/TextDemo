@@ -1,0 +1,7 @@
+*.db
+*.user
+.vs
+*.ini
+GeneratedFiles
+x64
+build
