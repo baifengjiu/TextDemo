@@ -33,43 +33,35 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PropertyTree.cpp">
+    <ClCompile Include="PropertyWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainWindow.cpp">
+    <ClCompile Include="fswExterior.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WidgetButton.cpp">
+    <ClCompile Include="ItemGroup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="PropertyTree.h">
+    <QtMoc Include="PropertyWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="MainWindow.h">
+    <QtMoc Include="fswExterior.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="WidgetButton.h">
+    <QtMoc Include="ItemGroup.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="PropertyTree.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="MainWindow.ui">
+    <QtUic Include="PropertyWidget.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\StyleSheet.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="struct.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <QtRcc Include="PropertyWidget.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
   </ItemGroup>
 </Project>

@@ -438,13 +438,13 @@ QTreeView::branch {
 QTreeView::branch:closed:has-children:!has-siblings,
 QTreeView::branch:closed:has-children:has-siblings {
     border-image: none;
-    image: url(:/PropertyTree/Resources/itemClose.png);
+    image: url(:/PropertyTree/Resources/itemExpansion.png);
 }
 
 QTreeView::branch:open:has-children:!has-siblings,
 QTreeView::branch:open:has-children:has-siblings {
     border-image: none;
-    image: url(:/PropertyTree/Resources/itemExpansion.png);
+    image: url(:/PropertyTree/Resources/itemClose.png);
 }
 
 QTreeView::item:hover, QTreeView::branch:hover {
