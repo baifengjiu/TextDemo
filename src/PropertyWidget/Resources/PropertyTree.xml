@@ -1,0 +1,164 @@
+<?xml version="1.0.0" encoding="utf-8"?>
+<!--
+    Language: 语言
+        en  | zh
+        英文  中文
+
+    name : 显示的名字 
+           没有name表示该行只有值
+
+    defaultValue : 默认值
+
+    type：类型
+        title | spinbox | dbspinbox | combobox | text
+        标题   值域（整数）值域（复数）   复选框    文本
+        - type == spinbox : min | max
+        - type == dbspinbox : min | max
+        - type == combobox : <comboValue></comboValue>
+        - type == text : regx
+    
+    tipMessage:提示消息
+-->
+<PropertyTree>
+    <property Language="en">
+        <!-- General -->
+        <General name="General" type="title">
+            <ID name="ID" tipMessage=""/>
+            <Code name="Code" defaultValue="" type="text" regx="" tipMessage=""/>
+            <Name name="Name" defaultValue="" type="text" regx="" tipMessage="Parameter Ident, must be unique in whole project."/>
+            <Unit name="Unit" defaultValue="" type="text" regx="" tipMessage="Parameter quantities unit."/>
+        </General>
+
+        <!-- Extraction -->
+        <Extraction name="Extraction" type="title">
+            <ExtractionType name="Extraction Type" type="combobox" tipMessage="Parameter position type.">
+                <comboValue>com</comboValue>
+                <comboValue>subcom</comboValue>
+                <comboValue>supercom</comboValue>
+                <comboValue>free</comboValue>
+                <comboValue>split</comboValue>
+            </ExtractionType>
+            <Position name="Position" defaultValue="" type="text" regx="" tipMessage="Parameter position offset in minor frame. Must be greater than 0."/>
+            <Positions name="Positions" defaultValue="" type="text" regx="" tipMessage="Parameter position offset in minor frame. Must be greater than 0."/>
+            <Format name="Format" defaultValue="Int" type="combobox" tipMessage="Parameter coding type.">
+                <comboValue>Int</comboValue>
+                <comboValue>UInt</comboValue>
+                <comboValue>Float</comboValue>
+                <comboValue>Double</comboValue>
+                <comboValue>BCD</comboValue>
+                <comboValue>Gray</comboValue>
+            </Format>
+            <Inversion name="Inversion" defaultValue="Yes" type="combobox" tipMessage="Bytes inversion.">
+                <comboValue>Yes</comboValue>
+                <comboValue>No</comboValue>
+            </Inversion>
+            <NbBytes name="Nb Bytes" defaultValue="0" type="spinbox" min="0" max="1024" tipMessage="Number of Bytes."/>
+            <NbBits name="Nb Bits" defaultValue="0" type="spinbox" min="0" max="1024" tipMessage="Number of bits."/>
+            <LSBPosBit name="LSB Pos Bit" defaultValue="0" type="spinbox" min="0" max="1024" tipMessage="LSB bit."/>
+            <Recurence name="Recurence" defaultValue="0" type="spinbox" min="0" max="1024" tipMessage="Recurence."/>
+            <MajorPos name="MajorPos" defaultValue="0" type="spinbox" min="0" max="1024" tipMessage="Major Positon."/>
+        </Extraction>
+
+        <!-- Calibration -->
+        <Calibration name="Calibration" type="title">
+            <CalibrationFunc name="CalibrationFunc" defaultValue="" type="combobox" tipMessage="">
+            </CalibrationFunc>
+        </Calibration>
+        
+        <!-- Processing -->
+        <Processing name="Processing" type="title">
+            <ProcessingFunc name="ProcessingFunc" defaultValue="" type="combobox" tipMessage="">
+            </ProcessingFunc>
+            <Parameter name="Param" type="title">
+            </Parameter>        
+            <Parameter name="Modulus" type="title">
+            </Parameter>
+        </Processing>
+        
+        <!-- Range -->
+        <Range name="Range" type="title">
+            <value defaultValue="" type="text" regx="" tipMessage=""/>
+        </Range>
+
+        <!-- PhysicsDel -->
+        <PhysicsDel name="PhysicsDel" type="title">
+            <value defaultValue="" type="text" regx="" tipMessage=""/>
+        </PhysicsDel>
+        
+        <!-- Description -->
+        <Description name="Description"  type="title">
+            <value defaultValue="" type="text" regx="" tipMessage="Click here to edit."/>
+        </Description>
+    </property>
+
+    <property Language="zh">
+        <!-- General -->
+        <General name="基本" type="title">
+            <ID name="ID" tipMessage=""/>
+            <Code name="代号" defaultValue="" type="text" regx="" tipMessage="确定参数的，在整个工程中是唯一的。"/>
+            <Name name="名字" defaultValue="" type="text" regx="" tipMessage=""/>
+            <Unit name="单位" defaultValue="" type="text" regx="" tipMessage="参数的单位。例：km/m/℃"/>
+        </General>
+
+        <!-- Extraction -->
+        <Extraction name="提取" type="title">
+            <ExtractionType name="提取类型" type="combobox" tipMessage="参数位置类型.">
+                <comboValue>com</comboValue>
+                <comboValue>subcom</comboValue>
+                <comboValue>supercom</comboValue>
+                <comboValue>free</comboValue>
+                <comboValue>split</comboValue>
+            </ExtractionType>
+            <Position name="位置" defaultValue="" type="text" regx="" tipMessage="参数再副帧中的偏移量，必须大于0。"/>
+            <Positions name="Positions" defaultValue="" type="text" regx="" tipMessage="参数再副帧中的偏移量，必须大于0。"/>
+            <Format name="参数类型" defaultValue="Int" type="combobox" tipMessage="参数数值类型。">
+                <comboValue>Int</comboValue>
+                <comboValue>UInt</comboValue>
+                <comboValue>Float</comboValue>
+                <comboValue>Double</comboValue>
+                <comboValue>BCD</comboValue>
+                <comboValue>Gray</comboValue>
+            </Format>
+            <Inversion name="反转" defaultValue="Yes" type="combobox" tipMessage="字节反转.">
+                <comboValue>Yes</comboValue>
+                <comboValue>No</comboValue>
+            </Inversion>
+            <NbBytes name="字节数" defaultValue="0" type="spinbox" min="0" max="1024" tipMessage="字节的数量，必须大于等于0。"/>
+            <NbBits name="比特数" defaultValue="0" type="spinbox" min="0" max="1024" tipMessage="比特的数量，必须大于等于0。"/>
+            <LSBPosBit name="左起比特位置" defaultValue="0" type="spinbox" min="0" max="1024" tipMessage="左起比特位置，必须大于等于0。"/>
+            <Recurence name="循环" defaultValue="0" type="spinbox" min="0" max="1024" tipMessage="循环，必须大于等于0。"/>
+            <MajorPos name="主帧位置" defaultValue="0" type="spinbox" min="0" max="1024" tipMessage="主帧位置，必须大于等于0。"/>
+        </Extraction>
+
+        <!-- Calibration -->
+        <Calibration name="校准" type="title">
+            <CalibrationFunc name="校准函数" defaultValue="" type="combobox" tipMessage="">
+            </CalibrationFunc>
+        </Calibration>
+        
+        <!-- Processing -->
+        <Processing name="处理" type="title">
+            <ProcessingFunc name="处理函数" defaultValue="" type="combobox" tipMessage="">
+            </ProcessingFunc>
+            <Parameter name="参数" type="title">
+            </Parameter>        
+            <Parameter name="系数" type="title">
+            </Parameter>
+        </Processing>
+        
+        <!-- Range -->
+        <Range name="值域" type="title">
+            <value defaultValue="" type="text" regx="" tipMessage=""/>
+        </Range>
+
+        <!-- PhysicsDel -->
+        <PhysicsDel name="物理描述" type="title">
+            <value defaultValue="" type="text" regx="" tipMessage=""/>
+        </PhysicsDel>
+        
+        <!-- Description -->
+        <Description name="描述" type="title" >
+            <value defaultValue="" type="text" regx="" tipMessage="点击这里进行编辑"/>
+        </Description>
+    </property>
+</PropertyTree>

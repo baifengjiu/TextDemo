@@ -1,4 +1,9 @@
 <RCC>
-    <qresource prefix="PropertyWidget">
+    <qresource prefix="/">
+        <file>Resources/PropertyTree.xml</file>
+        <file>Resources/addItem.png</file>
+        <file>Resources/deleteItem.png</file>
+        <file>Resources/itemClose.png</file>
+        <file>Resources/itemExpansion.png</file>
     </qresource>
 </RCC>
