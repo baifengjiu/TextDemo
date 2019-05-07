@@ -11,6 +11,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PropertyTree", "src\Propert
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PropertyWidget", "src\PropertyWidget\PropertyWidget.vcxproj", "{F98D1351-D210-4EDA-8D2D-1D48202B1050}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ColorGrid", "src\ColorGrid\ColorGrid.vcxproj", "{BA36EEB0-AE28-4FE8-84C3-71F983FEEEB2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "src\Test\Test.vcxproj", "{5B448C87-1AD7-4B98-B2D1-82FC978C6631}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BA36EEB0-AE28-4FE8-84C3-71F983FEEEB2} = {BA36EEB0-AE28-4FE8-84C3-71F983FEEEB2}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -33,11 +40,20 @@ Global
 		{F98D1351-D210-4EDA-8D2D-1D48202B1050}.Debug|x64.Build.0 = Debug|x64
 		{F98D1351-D210-4EDA-8D2D-1D48202B1050}.Release|x64.ActiveCfg = Release|x64
 		{F98D1351-D210-4EDA-8D2D-1D48202B1050}.Release|x64.Build.0 = Release|x64
+		{BA36EEB0-AE28-4FE8-84C3-71F983FEEEB2}.Debug|x64.ActiveCfg = Debug|x64
+		{BA36EEB0-AE28-4FE8-84C3-71F983FEEEB2}.Debug|x64.Build.0 = Debug|x64
+		{BA36EEB0-AE28-4FE8-84C3-71F983FEEEB2}.Release|x64.ActiveCfg = Release|x64
+		{BA36EEB0-AE28-4FE8-84C3-71F983FEEEB2}.Release|x64.Build.0 = Release|x64
+		{5B448C87-1AD7-4B98-B2D1-82FC978C6631}.Debug|x64.ActiveCfg = Debug|x64
+		{5B448C87-1AD7-4B98-B2D1-82FC978C6631}.Debug|x64.Build.0 = Debug|x64
+		{5B448C87-1AD7-4B98-B2D1-82FC978C6631}.Release|x64.ActiveCfg = Release|x64
+		{5B448C87-1AD7-4B98-B2D1-82FC978C6631}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		Qt5Version = $(DefaultQtVersion)
 		SolutionGuid = {7E35EAE5-B7C7-44BE-932E-082883F73EA5}
 	EndGlobalSection
 EndGlobal

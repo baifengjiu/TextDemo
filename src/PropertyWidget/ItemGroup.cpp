@@ -23,8 +23,9 @@ ItemGroup::ItemGroup(QString titleName, bool hideTitle, QWidget * parent)
     if (!hideTitle)
     {
         QWidget *titleWidget = new QWidget(parent);
-        titleWidget->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Fixed);
+        titleWidget->setSizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
         QHBoxLayout *hTitleLayout = new QHBoxLayout(titleWidget);
+        hTitleLayout->setMargin(0);
         m_btnExpand = new  QToolButton(titleWidget);
         m_btnExpand->setIcon(QIcon(":/Resources/itemExpansion.png"));
         m_btnExpand->setCheckable(true);
@@ -37,11 +38,12 @@ ItemGroup::ItemGroup(QString titleName, bool hideTitle, QWidget * parent)
         hTitleLayout->addStretch();
         hTitleLayout->addWidget(m_toolBox);
         vLayout->addWidget(titleWidget);
+        m_btnExpand->setStyleSheet("border-style:flat;");
         connect(m_btnExpand, &QToolButton::clicked, this, &ItemGroup::onExpand);
     }
 
     m_contentWidget = new QWidget(parent);
-    m_contentWidget->setSizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
+    m_contentWidget->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Fixed);
     QVBoxLayout *vContentLayout = new QVBoxLayout(m_contentWidget);
     vContentLayout->setContentsMargins(9,0,9,0);
     vContentLayout->setSpacing(5);
@@ -60,7 +62,7 @@ QWidget* ItemGroup::getContent()
 void ItemGroup::createRow(QString & name, QString value, QString regx)
 {
     QWidget *widget = new QWidget(m_contentWidget);
-    widget->setSizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
+    widget->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Fixed);
     QHBoxLayout *hLayout = new QHBoxLayout(widget);
     hLayout->setMargin(0);
     hLayout->setSpacing(0);
@@ -81,7 +83,7 @@ void ItemGroup::createRow(QString & name, QString value, QString regx)
 void ItemGroup::createRow(QString & name, QString value, int min, int max)
 {
     QWidget *widget = new QWidget(m_contentWidget);
-    widget->setSizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
+    widget->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Fixed);
     QHBoxLayout *hLayout = new QHBoxLayout(widget);
     hLayout->setMargin(0);
     hLayout->setSpacing(0);
@@ -103,7 +105,7 @@ void ItemGroup::createRow(QString & name, QString value, int min, int max)
 void ItemGroup::createRow(QString & name, QString value, double min, double max)
 {
     QWidget *widget = new QWidget(m_contentWidget);
-    widget->setSizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
+    widget->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Fixed);
     QHBoxLayout *hLayout = new QHBoxLayout(widget);
     hLayout->setMargin(0);
     hLayout->setSpacing(0);
@@ -125,7 +127,7 @@ void ItemGroup::createRow(QString & name, QString value, double min, double max)
 void ItemGroup::createRow(QString & name, QString value, QStringList values)
 {
     QWidget *widget = new QWidget(m_contentWidget);
-    widget->setSizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
+    widget->setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Fixed);
     QHBoxLayout *hLayout = new QHBoxLayout(widget);
     hLayout->setMargin(0);
     hLayout->setSpacing(0);

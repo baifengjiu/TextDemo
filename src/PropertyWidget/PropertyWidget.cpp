@@ -1,7 +1,7 @@
 #include "PropertyWidget.h"
 #include <QFile>
 #include "ItemGroup.h"
-#include <qdebug.h>
+#include <qdebug.h>    
 
 PropertyWidget::PropertyWidget(QWidget *parent)
     : QDialog(parent)
@@ -34,6 +34,7 @@ void PropertyWidget::redXml()
         }
         qDebug() << m_xmlRoot.attribute("Language");
     }
+    file.close();
 }
 
 void PropertyWidget::initUI(QDomNode & elem, QWidget * parent)
