@@ -4,15 +4,12 @@
 #include <QUrl>
 #include <QFile>
 
-namespace Ui { class DownInfo; }
+namespace Ui { class DownInfo; };
 
 struct FileMsg
 {
-	FileMsg() {};
-	~FileMsg() { delete file; };
-
 	QUrl url;
-	QFile * file;
+	QString file;
 };
 
 class DownInfo : public QDialog
@@ -23,16 +20,15 @@ public:
 	DownInfo(QWidget* parent = nullptr);
 	~DownInfo();
 
-	void setMsg(FileMsg *file);
+	void setMsg(FileMsg file);
 
-	FileMsg* msg();
+	FileMsg msg();
 
-public Q_SLOTS:
-	void onProgressValue(qint64,qint64);
 
 private Q_SLOTS:
 	void onEnsure();
+
 private:
 	Ui::DownInfo* ui;
-	FileMsg* m_fileMsg;
-}
+	FileMsg m_fileMsg;
+};

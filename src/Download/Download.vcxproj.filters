@@ -39,7 +39,10 @@
     <ClCompile Include="DownInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DownThread.cpp">
+    <ClCompile Include="Down.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyTabelModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,7 +53,10 @@
     <QtMoc Include="DownInfo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="DownThread.h">
+    <QtMoc Include="Down.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="MyTabelModel.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

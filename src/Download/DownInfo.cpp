@@ -8,8 +8,9 @@
 DownInfo::DownInfo(QWidget *parent)
 	: QDialog(parent)
 	, ui(new Ui::DownInfo)
-	, m_fileMsg(new FileMsg)
 {
+	ui->setupUi(this);
+
 	connect(ui->okButton, &QPushButton::clicked, this, &DownInfo::onEnsure);
 	connect(ui->cancelButton, &QPushButton::clicked, this, &QDialog::reject);
 }
@@ -17,24 +18,17 @@ DownInfo::DownInfo(QWidget *parent)
 DownInfo::~DownInfo()
 {
 	delete ui;
-	delete m_fileMsg;
 }
 
-void DownInfo::setMsg(FileMsg* file)
+void DownInfo::setMsg(FileMsg file)
 {
 	m_fileMsg = file;
 	ui->okButton->setEnabled(false);
 }
 
-FileMsg* DownInfo::msg()
+FileMsg DownInfo::msg()
 {
 	return m_fileMsg;
-}
-
-void DownInfo::onProgressValue(qint64 bytesRead, qint64 totalBytes)
-{
-	qint64 value = bytesRead / totalBytes * 100;
-	ui->progressBar->setValue(value);
 }
 
 void DownInfo::onEnsure()
@@ -48,7 +42,7 @@ void DownInfo::onEnsure()
 	}
 
 	QUrl newUrl = QUrl::fromUserInput(urlSpec);
-	if (newUrl.isValid())
+	if (!newUrl.isValid())
 	{
 		ui->urlLe->setFocus();
 		ui->tips->setText(tr("Invalid URL."));
@@ -69,15 +63,7 @@ void DownInfo::onEnsure()
 		QFile::remove(fullPath);
 	}
 
-	QFile* file = new QFile(fullPath);
-	if (!file->open(QIODevice::WriteOnly))
-	{
-		ui->tips->setText(tr("Open file error."));
-		return;
-	}
-
-	m_fileMsg->url = newUrl;
-	m_fileMsg->file = file;
-
+	m_fileMsg.url = newUrl;
+	m_fileMsg.file = fullPath;
 	accept();
 }
