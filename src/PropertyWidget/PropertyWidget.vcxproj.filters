@@ -64,4 +64,9 @@
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\ColorGrid\ColorGrid.h">
+      <Filter>Form Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/Download">
+        <file>Resources/PureFlat_Small.bmp</file>
+        <file>Resources/css.css</file>
+    </qresource>
+</RCC>

@@ -107,7 +107,6 @@ xcopy /y "$(ProjectDir)*.h"  "$(SolutionDir)\include\$(ProjectName)"</Command>
     <ClCompile Include="ColorGrid.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ColorGrid.h" />
     <ClInclude Include="colorgrid_global.h" />
   </ItemGroup>
   <ItemGroup>
