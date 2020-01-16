@@ -22,7 +22,7 @@ ColorGrid::ColorGrid(QWidget * parent)
 
 void ColorGrid::paintEvent(QPaintEvent * event)
 {
-    int c = m_cellSize ;
+    int c = m_cellSize;
     int h = m_col * c;
     int w = m_row * c;;
     //获取表格宽高，计算当前视野
@@ -35,9 +35,11 @@ void ColorGrid::paintEvent(QPaintEvent * event)
     p.drawRect(0, 0, w + 2, h + 2);
 
     int x = 1, y = 1;
-    for (int j = 0; j < m_row; j++, y += c) {
+    for (int j = 0; j < m_row; j++, y += c)
+    {
         x = 1;
-        for (int i = 0; i < m_col; i++, x += c) {
+        for (int i = 0; i < m_col; i++, x += c)
+        {
             auto color = Qt::lightGray;
             color = (i + j) % 2 ? Qt::lightGray : Qt::white;
             p.fillRect(QRect(x, y, m_cellSize, m_cellSize), color);
@@ -67,16 +69,4 @@ void ColorGrid::wheelEvent(QWheelEvent * event)
 
     repaint();
     QWidget::wheelEvent(event);
-}
-
-void ColorGrid::dragEnterEvent(QDragEnterEvent * event)
-{
-}
-
-void ColorGrid::dragMoveEvent(QDragMoveEvent * event)
-{
-}
-
-void ColorGrid::dragLeaveEvent(QDragLeaveEvent * event)
-{
 }

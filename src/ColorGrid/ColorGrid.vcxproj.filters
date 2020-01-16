@@ -29,10 +29,13 @@
     <ClCompile Include="ColorGrid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="colorgrid_global.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="ColorGrid.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

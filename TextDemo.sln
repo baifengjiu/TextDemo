@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28917.181
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "paintDemo", "src\paintDemo\paintDemo.vcxproj", "{B14B9C33-B670-4AED-808B-F4A8FBA4EF3C}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextDemo", "src\textDemo\TextDemo.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PropertyTree", "src\PropertyTree\PropertyTree.vcxproj", "{DDC200DD-B9A1-4929-B81E-CF28E17053A8}"
 EndProject
@@ -14,10 +12,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ColorGrid", "src\ColorGrid\ColorGrid.vcxproj", "{BA36EEB0-AE28-4FE8-84C3-71F983FEEEB2}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Download", "src\Download\Download.vcxproj", "{77D5668B-D444-409F-9BFD-42C4852294A8}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{83D7F34C-330F-491E-A340-BB3CAACE4D3F}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "src\Test\Test.vcxproj", "{5B448C87-1AD7-4B98-B2D1-82FC978C6631}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +23,6 @@ Global
 		{B14B9C33-B670-4AED-808B-F4A8FBA4EF3C}.Debug|x64.Build.0 = Debug|x64
 		{B14B9C33-B670-4AED-808B-F4A8FBA4EF3C}.Release|x64.ActiveCfg = Release|x64
 		{B14B9C33-B670-4AED-808B-F4A8FBA4EF3C}.Release|x64.Build.0 = Release|x64
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|x64.ActiveCfg = Debug|x64
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|x64.Build.0 = Debug|x64
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x64.ActiveCfg = Release|x64
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x64.Build.0 = Release|x64
 		{DDC200DD-B9A1-4929-B81E-CF28E17053A8}.Debug|x64.ActiveCfg = Debug|x64
 		{DDC200DD-B9A1-4929-B81E-CF28E17053A8}.Debug|x64.Build.0 = Debug|x64
 		{DDC200DD-B9A1-4929-B81E-CF28E17053A8}.Release|x64.ActiveCfg = Release|x64
@@ -49,16 +39,12 @@ Global
 		{77D5668B-D444-409F-9BFD-42C4852294A8}.Debug|x64.Build.0 = Debug|x64
 		{77D5668B-D444-409F-9BFD-42C4852294A8}.Release|x64.ActiveCfg = Release|x64
 		{77D5668B-D444-409F-9BFD-42C4852294A8}.Release|x64.Build.0 = Release|x64
-		{5B448C87-1AD7-4B98-B2D1-82FC978C6631}.Debug|x64.ActiveCfg = Debug|x64
-		{5B448C87-1AD7-4B98-B2D1-82FC978C6631}.Debug|x64.Build.0 = Debug|x64
-		{5B448C87-1AD7-4B98-B2D1-82FC978C6631}.Release|x64.ActiveCfg = Release|x64
-		{5B448C87-1AD7-4B98-B2D1-82FC978C6631}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7E35EAE5-B7C7-44BE-932E-082883F73EA5}
 		Qt5Version = $(DefaultQtVersion)
+		SolutionGuid = {7E35EAE5-B7C7-44BE-932E-082883F73EA5}
 	EndGlobalSection
 EndGlobal
