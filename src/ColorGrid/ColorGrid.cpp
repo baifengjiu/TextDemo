@@ -9,6 +9,27 @@
 #include <QDragLeaveEvent>
 #include <QScrollArea>
 
+struct Impl
+{
+    Impl()
+        :interval(8)
+        , row(10)
+        , col(10)
+        , isShowTopCursor(true)
+        , isShowLeftCursor(true)
+        , hScrollOffset(0)
+        , vScrollOffset(0)
+    {}
+
+    int row;//行
+    int col;//列
+    bool isShowTopCursor; //列号
+    bool isShowLeftCursor; //行号
+    int interval;//间隔
+    int hScrollOffset;//偏移量
+    int vScrollOffset;//便移量
+};
+
 ColorGrid::ColorGrid(QWidget * parent)
     : QWidget(parent)
     , m_row(1024)
@@ -59,6 +80,12 @@ void ColorGrid::mouseMoveEvent(QMouseEvent * event)
     QToolTip::showText(event->globalPos(), message, this);
 
     QWidget::mouseMoveEvent(event);
+}
+
+void ColorGrid::mousePressEvent(QMouseEvent * event)
+{
+
+
 }
 
 void ColorGrid::wheelEvent(QWheelEvent * event)

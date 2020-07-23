@@ -11,14 +11,14 @@ class PaintView;
 
 enum RADIX
 {
-    BINARY=2,
-    OCTAL=8,
-    DECIMAL=10,
-    HEXADECIMAL=16
+    BINARY = 2,
+    OCTAL = 8,
+    DECIMAL = 10,
+    HEXADECIMAL = 16
 };
 
 /****************************************
-* @brif	TopCursor 顶部游标（列号）
+* @brif TopCursor 顶部游标（列号）
 ****************************************/
 class TopCursor : public QWidget
 {
@@ -29,14 +29,14 @@ public:
     ~TopCursor() {};
 
 protected:
-    void paintEvent(QPaintEvent* event);
+    void paintEvent(QPaintEvent* event) override;
 
 private:
     struct Imp *impPtr;
 };
 
 /****************************************
-* @brif	LeftCursor 左侧游标（行号）
+* @brif LeftCursor 左侧游标（行号）
 ****************************************/
 class LeftCursor : public QWidget
 {
@@ -46,14 +46,14 @@ public:
     ~LeftCursor() {};
 
 protected:
-    void paintEvent(QPaintEvent* event);
+    void paintEvent(QPaintEvent* event) override;
 
 private:
     struct Imp *impPtr;
 };
 
 /****************************************
-* @brif	PaintWidgets 主界面
+* @brif PaintWidgets 主界面
 ****************************************/
 class PaintWidget : public QAbstractScrollArea
 {
@@ -97,7 +97,8 @@ private:
     void setHScollValue();
     void setVScollValue();
     //16
-    inline QString & toHex(uchar ch, QString &str){
+    inline QString & toHex(uchar ch, QString &str)
+    {
         uchar l(ch & 0b1111);
         uchar h((ch >> 4) & 0b1111);
         str[0] = (h < 10) ? '0' + h : 'A' - 10 + h;
@@ -105,28 +106,31 @@ private:
         return str;
     }
     //10
-    inline QString & toDec(uchar ch, QString &str){
+    inline QString & toDec(uchar ch, QString &str)
+    {
         str[0] = '0' + (ch / 100);
         str[1] = '0' + ((ch / 10) % 10);
         str[2] = '0' + (ch % 10);
         return str;
     }
     //8
-    inline QString & toOct(uchar ch, QString &str){
+    inline QString & toOct(uchar ch, QString &str)
+    {
         str[0] = '0' + ((ch >> 6) & 0b111);
         str[1] = '0' + ((ch >> 3) & 0b111);
         str[2] = '0' + (ch & 0b111);
         return str;
     }
 //2
-inline QString & toBin(uchar ch, QString &str){
-    for(int i = 0; i < 4; ++i)
+    inline QString & toBin(uchar ch, QString &str)
     {
-        str[7-i] = '0' + ((ch >> i) & 1);
-        str[3-i] = '0' + ((ch >> (i+4)) & 1);
+        for (int i = 0; i < 4; ++i)
+        {
+            str[7 - i] = '0' + ((ch >> i) & 1);
+            str[3 - i] = '0' + ((ch >> (i + 4)) & 1);
+        }
+        return str;
     }
-    return str;
-}
 
 private slots:
     void onHScrollBarChanged(int value);
@@ -139,4 +143,3 @@ private:
 };
 
 #endif // !PAINTWIDGET_H
-
